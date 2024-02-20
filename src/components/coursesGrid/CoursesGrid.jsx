@@ -3,11 +3,11 @@ import { GlobalContext } from "../../context/globalContext";
 import { Link } from "react-router-dom";
 
 export const CoursesGrid = () => {
-  const { coursesList, setCoursesList, fetchCourses } =
+  const { coursesList } =
     useContext(GlobalContext);
   return (
     <div className="mx-auto grid max-w-2xl grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-16 py-10 lg:mx-0 lg:max-w-none xl:grid-cols-6">
-      {coursesList.map((course) => {
+      {coursesList.length > 0 ? coursesList.map((course) => {
         return (
           <Link
             to={`/course/${course._id}`}
@@ -41,7 +41,7 @@ export const CoursesGrid = () => {
             </div>
           </Link>
         );
-      })}
+      }): <>Courses Are Coming Soon</>}
     </div>
   );
 };

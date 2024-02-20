@@ -16,7 +16,7 @@ export default function Login() {
     role: "student",
   };
   const emptyUser = { email: "", password: "" };
-  const roleOptions = ["student", "teaccher"];
+  const roleOptions = ["student", "teacher"];
   const { setGlobalUser } = useContext(GlobalContext);
 
   const navigate = useNavigate();

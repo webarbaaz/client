@@ -122,12 +122,12 @@ export default function Login() {
 
             <p className="mt-10 text-center text-sm text-gray-500">
               Not a member?{" "}
-              <a
+              <span
                 onClick={() => setToggle(true)}
                 className="font-semibold leading-6 text-indigo-600 hover:text-indigo-500 cursor-pointer"
               >
                 Sign Up
-              </a>
+              </span>
             </p>
           </div>
         </div>
@@ -226,12 +226,12 @@ export default function Login() {
 
             <p className="mt-10 text-center text-sm text-gray-500">
               Already a member?{" "}
-              <a
+              <span
                 onClick={() => setToggle(false)}
                 className="font-semibold leading-6 text-indigo-600 hover:text-indigo-500 cursor-pointer"
               >
                 Sign In
-              </a>
+              </span>
             </p>
           </div>
         </div>

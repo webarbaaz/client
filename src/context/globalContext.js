@@ -19,7 +19,7 @@ export const GlobalProvider = ({ children }) => {
     if (storedUser) {
       setGlobalUser(JSON.parse(storedUser));
     }
-  }, []);
+  });
 
   const fetchCourses = async () => {
     const res = await getCourses();

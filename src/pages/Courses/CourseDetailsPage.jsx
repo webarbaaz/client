@@ -19,7 +19,7 @@ const CourseDetailsPage = () => {
         } catch (error) {
             console.error('Error fetching course:', error);
         }
-    }, []);
+    }, [setCourse]);
 
     // Fetch course details when the component mounts or when the ID changes
     useEffect(() => {
@@ -40,7 +40,7 @@ const CourseDetailsPage = () => {
                     {toggle ?
                         <div className='preview px-10'>
                             <div className='image-container'>
-                                <img className='w-full my-10' src={course?.featureImage} />
+                                <img className='w-full my-10' src={course?.featureImage} alt='feature' />
                             </div>
                             <h2 className='text-4xl font-extrabold capitalize mb-10'>{course?.title}</h2>
                             <div className='text-xl text-slate-500 mb-5' dangerouslySetInnerHTML={{ __html: course?.description }}>

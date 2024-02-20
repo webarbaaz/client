@@ -7,18 +7,17 @@ import { GlobalContext } from "../../context/globalContext";
 import { clearToken } from "../../services/authenticationService";
 
 export default function Header() {
-
-  const { globalUser, setGlobalUser } = useContext(GlobalContext)
+  const { globalUser, setGlobalUser } = useContext(GlobalContext);
 
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const logout = () => {
-    clearToken()
-    setGlobalUser(null)
-  }
+    clearToken();
+    setGlobalUser(null);
+  };
 
   return (
-    <header className="bg-transparent z-20 relative">
+    <header className="bg-transparent relative">
       <nav
         className="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8"
         aria-label="Global"
@@ -58,25 +57,31 @@ export default function Header() {
           </Link>
         </Popover.Group>
         <div className="hidden lg:flex lg:flex-1 lg:justify-end">
-          {globalUser ? (<>          <Link
-            to="profile"
-            className="text-sm font-semibold leading-6 text-gray-900 py-1.5 pr-5"
-          >
-            Profile
-          </Link><button
-            onClick={logout}
-            type="submit"
-            className="flex justify-center rounded-md bg-indigo-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
-          >
-              Logout
-            </button>
-          </>) :
+          {globalUser ? (
+            <>
+              {" "}
+              <Link
+                to="profile"
+                className="text-sm font-semibold leading-6 text-gray-900 py-1.5 pr-5"
+              >
+                Profile
+              </Link>
+              <button
+                onClick={logout}
+                type="submit"
+                className="flex justify-center rounded-md bg-indigo-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+              >
+                Logout
+              </button>
+            </>
+          ) : (
             <Link
               to="login"
               className="text-sm font-semibold leading-6 text-gray-900"
             >
               Log in <span aria-hidden="true">&rarr;</span>
-            </Link>}
+            </Link>
+          )}
         </div>
       </nav>
       <Dialog
@@ -121,26 +126,32 @@ export default function Header() {
                   Courses
                 </Link>
               </div>
-              <div className="py-6">
-                {globalUser ? (<>          <Link
-                  to="profile"
-                  className="text-sm font-semibold leading-6 text-gray-900 py-1.5 pr-5"
-                >
-                  Profile
-                </Link><button
-                  onClick={logout}
-                  type="submit"
-                  className="flex justify-center rounded-md bg-indigo-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
-                >
-                    Logout
-                  </button>
-                </>) :
+              <div className="space-y-2 py-6">
+                {globalUser ? (
+                  <>
+                    {" "}
+                    <Link
+                      to="profile"
+                      className="text-sm font-semibold leading-6 text-gray-900 py-1.5 pr-5"
+                    >
+                      Profile
+                    </Link>
+                    <button
+                      onClick={logout}
+                      type="submit"
+                      className="flex justify-center rounded-md bg-indigo-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+                    >
+                      Logout
+                    </button>
+                  </>
+                ) : (
                   <Link
                     to="login"
                     className="text-sm font-semibold leading-6 text-gray-900"
                   >
                     Log in <span aria-hidden="true">&rarr;</span>
-                  </Link>}
+                  </Link>
+                )}
               </div>
             </div>
           </div>

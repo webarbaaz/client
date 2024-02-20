@@ -15,11 +15,11 @@ export const CourseDialog = ({
     <div>
       {" "}
       <Dialog
-        style={{ width: "60%" }}
+        style={{ width: "95%" }}
         visible={visibleDialog}
         onHide={hideDialog}
       >
-        <div className="p-grid p-6 p-fluid">
+        <div className="p-grid lg:p-6 mt-3 p-fluid">
           <div className="col-12 mb-3">
             <form onSubmit={handleSubmit} className="space-y-6">
               <div>
